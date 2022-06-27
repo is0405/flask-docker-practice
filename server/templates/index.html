@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Test Page</title>
+</head>
+<body>
+    <!-- GETパラメータを取得したとき(変数nameに値がある)の表示 -->
+    {% if ID and rad %}
+    トルクID: {{ ID }}
+    <br/>
+    目標角度: {{ rad }}
+    <!-- GETパラメータを取得しなかったとき(変数nameに値がない)の表示 -->
+    {% else %}
+    {{ message }}
+    {% endif %}
+</body>
+</html>

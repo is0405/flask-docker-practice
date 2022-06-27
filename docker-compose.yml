@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    image: python:3.8
+    container_name: web
+    command: python3 app.py
+    working_dir: /app
+    tty: true
+    ports:
+      - 10001:5000
+    networks:
+      - nginx_network
+    volumes:
+      - ./server:/app
+      
+networks:
+  nginx_network:
+    driver: bridge
